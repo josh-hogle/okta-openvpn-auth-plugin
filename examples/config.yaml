@@ -1,0 +1,84 @@
+global:
+  # Logging level
+  #   By default informational, warning and error messages are logged. Change this to a supported level in order to
+  #   increase or reduce the amount of logging output. Valid values are: debug, info, warn, error, none
+  #
+  # Default: "info"
+  log_level: "debug"
+
+  # Enable JSON log output
+  #   When true, rather than using standard text output, log messages will be formatted as JSON.
+  #
+  # Default: false
+  enable_json_logging: false
+
+auth:
+  # Your Okta organization name (required)
+  #   This is typically the portion of the hostname before '.okta.com' in your organization's SSO URL when logging
+  #   into Okta.
+  #
+  # Default: None (a value must be specified)
+  org_name: "dev-46820877"
+
+  # Path where the base64-encoded API key is stored
+  #   This should be the full path to the file which contains the base64-encoded Okta API key you set up.
+  #
+  #   If you wish to make API calls without using an API key, leave this value empty.  However, your API calls
+  #   may be more stringently rate-limited by Okta.
+  #
+  #   See https://developer.okta.com/docs/api/resources/authn#authentication-api for an explanation around a
+  #   Public Application (no API key) vs a Trusted Application (with API key).
+  #
+  # Default: ""
+  #  api_key_file: "/run/secrets/okta-openvpn.key"
+  api_key_file: "./okta-openvpn.key"
+
+  # List of supported MFA methods
+  #   This must be 'totp' for using passcodes with Google Authenticator, etc. or 'push' for pushing requests to
+  #   Okta Verify.  You can enable both methods.
+  #
+  #   If TOTP is enabled, the user must put his/her passcode at the end of their password separating their password
+  #   from the passcode with a + sign.  For example: thisismypassword+012345
+  #
+  #   If this is an empty list, no MFA methods will be supported and anyone requiring MFA will be denied access.
+  #
+  # Default: []
+  mfa_methods: ["totp", "push"]
+
+  # How long do we wait for an MFA push to complete before considering the request timed out
+  #   This should be an integer greater than 15 followed by s for seconds or m for minutes.  If the timeout is set
+  #   less than 15 seconds, it defaults to 15 seconds.
+  #
+  # Default: 30s
+  mfa_timeout: 30s
+
+  # Path to MaxMind GeoLite2 City Database
+  #   If you wish to add extra "city data" to the OpenVPN log output when a user connects, download the latest version
+  #   of the MaxMind GeoLite2 City database from https://dev.maxmind.com/geoip/geoip2/geolite2/ and specify the path
+  #   here.  Relative paths are relative to the current working directory of the plugin, so it is recommended to alway
+  #   use an absolute path.
+  #
+  #   If this is empty, no extra city data will be logged.
+  # Default: ""
+  geoip_db_path: ""
+
+  # The locale to use for locations
+  #   This is the actual locale to use when looking up a location in the MaxMind database.
+  #
+  # Default: "en"
+  geoip_locale: en
+
+  # Whether or not to run an interactive authentication test
+  #   This flag is purely for testing that your configuration is working. It should always be set to false in
+  #   production. When true, the auth command will prompt for a username, password and optional MFA code and
+  #   validate authentication.
+  #
+  # Default: false
+  interactive: false
+
+version:
+  # Whether or not to only display the version without build details.
+  #   When true, only the version number is displayed and nothing else.
+  #
+  # Default: false
+  short: false

@@ -1,0 +1,66 @@
+snapshot:
+  name_template: "{{ .Tag }}-SNAPSHOT"
+
+before:
+  hooks:
+    - go mod tidy
+
+builds:
+  - id: plugin-linux-only
+    main: ./cmd/okta-openvpn
+    binary: okta-openvpn
+    ldflags:
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.DevBuildStr=1
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Version={{ .Version }}
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Build={{ .ShortCommit }}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - linux
+    goarch:
+      - amd64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: plugin-darwin-only
+    main: ./cmd/okta-openvpn
+    binary: okta-openvpn
+    ldflags:
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.DevBuildStr=1
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Version={{ .Version }}
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Build={{ .ShortCommit }}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+    goarch:
+      - amd64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: plugin-win-only
+    main: ./cmd/okta-openvpn
+    binary: okta-openvpn
+    ldflags:
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.DevBuildStr=1
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Version={{ .Version }}
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Build={{ .ShortCommit }}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - windows
+    goarch:
+      - amd64
+    mod_timestamp: "{{ .CommitTimestamp }}"
+  - id: plugin-all
+    main: ./cmd/okta-openvpn
+    binary: okta-openvpn
+    ldflags:
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.DevBuildStr=1
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Version={{ .Version }}
+      - -X github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app.Build={{ .ShortCommit }}
+    env:
+      - CGO_ENABLED=0
+    goos:
+      - darwin
+      - linux
+      - windows
+    goarch:
+      - amd64
+    mod_timestamp: "{{ .CommitTimestamp }}"

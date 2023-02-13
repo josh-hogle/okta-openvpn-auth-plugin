@@ -1,0 +1,29 @@
+version: "1.0"
+
+stages:
+  - clone
+  - build
+  - release
+
+steps:
+  clone:
+    title: Cloning repository
+    type: git-clone
+    stage: clone
+    repo: ${{CF_REPO_OWNER}}/${{CF_REPO_NAME}}
+    revision: ${{CF_BRANCH}}
+    git: github-cicd
+
+  #build-cli:
+  #  title: Building CLI
+  #  stage: build
+
+  release:
+    type: github-release
+    stage: release
+    title: Creating GitHub release
+    arguments:
+      release_name: ${{CF_BRANCH}}
+      release_tag: ${{CF_BRANCH}}
+
+  # attach artifacts from build-cli to release
