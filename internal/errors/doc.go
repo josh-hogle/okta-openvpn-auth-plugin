@@ -1,7 +1,7 @@
 // Package errors provides application error handling functionality.
 //
 // Any methods in packages which return an error object will return a custom error type implementing the
-// github.com/josh-hogle/go-toolbox/errors.ExtendedError interface. The specific errors returned by the method are noted in
+// go.innotegrity.dev/toolbox/errors.ExtendedError interface. The specific errors returned by the method are noted in
 // its documentation. Each integer code corresponding the the specific error is unique across the application.
 //
 // To determine the specific type of error that was returned, you can use 1 of 3 methods:

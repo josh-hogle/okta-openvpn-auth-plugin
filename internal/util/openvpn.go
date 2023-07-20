@@ -7,8 +7,8 @@ import (
 
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/errors"
-	"github.com/josh-hogle/zerolog/v2/log"
 	geoip2 "github.com/oschwald/geoip2-golang"
+	"go.innotegrity.dev/zerolog/log"
 )
 
 // OpenVPNClientRequest holds data from the OpenVPN connection request

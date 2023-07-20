@@ -10,11 +10,11 @@ import (
 	"time"
 
 	"github.com/Masterminds/semver"
-	tberrors "github.com/josh-hogle/go-toolbox/errors"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/errors"
-	"github.com/josh-hogle/zerolog/v2"
-	"github.com/josh-hogle/zerolog/v2/log"
+	tberrors "go.innotegrity.dev/toolbox/errors"
+	"go.innotegrity.dev/zerolog"
+	"go.innotegrity.dev/zerolog/log"
 )
 
 func main() {

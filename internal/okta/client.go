@@ -11,7 +11,7 @@ import (
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/errors"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/util"
-	"github.com/josh-hogle/zerolog/v2/log"
+	"go.innotegrity.dev/zerolog/log"
 	"gopkg.in/resty.v1"
 )
 

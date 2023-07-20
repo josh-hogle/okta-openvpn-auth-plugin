@@ -9,11 +9,11 @@ import (
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/commands/auth"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/commands/version"
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/errors"
-	"github.com/josh-hogle/zerolog/v2"
-	"github.com/josh-hogle/zerolog/v2/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"go.innotegrity.dev/zerolog"
+	"go.innotegrity.dev/zerolog/log"
 )
 
 // RootCommand is the base command for the application.

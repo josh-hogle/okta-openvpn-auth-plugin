@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/errors"
-	"github.com/josh-hogle/zerolog/v2/log"
 	"github.com/spf13/viper"
+	"go.innotegrity.dev/zerolog/log"
 )
 
 // Default configuration settings.

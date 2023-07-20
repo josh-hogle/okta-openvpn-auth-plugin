@@ -5,12 +5,12 @@ go 1.17
 require (
 	github.com/Masterminds/semver v1.5.0
 	github.com/davecgh/go-spew v1.1.1
-	github.com/josh-hogle/go-toolbox v0.1.0
-	github.com/josh-hogle/zerolog/v2 v2.29.0
 	github.com/oschwald/geoip2-golang v1.5.0
 	github.com/spf13/cobra v1.3.0
 	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.10.0
+	go.innotegrity.dev/toolbox v0.1.0
+	go.innotegrity.dev/zerolog v1.30.0
 	gopkg.in/resty.v1 v1.12.0
 )
 
@@ -24,7 +24,7 @@ require (
 	github.com/mitchellh/mapstructure v1.4.3 // indirect
 	github.com/oschwald/maxminddb-golang v1.8.0 // indirect
 	github.com/pelletier/go-toml v1.9.4 // indirect
-	github.com/sirupsen/logrus v1.9.0 // indirect
+	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/spf13/afero v1.6.0 // indirect
 	github.com/spf13/cast v1.4.1 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect

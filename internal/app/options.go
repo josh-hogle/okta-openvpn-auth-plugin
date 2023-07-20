@@ -11,9 +11,9 @@ import (
 	"time"
 
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/errors"
-	"github.com/josh-hogle/zerolog/v2"
-	"github.com/josh-hogle/zerolog/v2/log"
 	"github.com/oschwald/geoip2-golang"
+	"go.innotegrity.dev/zerolog"
+	"go.innotegrity.dev/zerolog/log"
 )
 
 // Default configuration settings.

@@ -4,11 +4,11 @@ import (
 	"fmt"
 
 	"github.com/josh-hogle/okta-openvpn-auth-plugin/internal/app"
-	"github.com/josh-hogle/zerolog/v2"
-	"github.com/josh-hogle/zerolog/v2/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+	"go.innotegrity.dev/zerolog"
+	"go.innotegrity.dev/zerolog/log"
 )
 
 // Command is the object for executing the actual command.
